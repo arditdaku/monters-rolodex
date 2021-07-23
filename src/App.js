@@ -15,12 +15,14 @@ function App() {
   const filteredMonsters = monstes.filter((monster) =>
     monster.name.toLowerCase().includes(searchField.toLowerCase())
   );
+  const handleChange = (e) => setSearch(e.target.value);
+
   return (
     <div className="mt-3 min-h-screen flex flex-col h-2/5 dark:bg-gray-800 bg-white">
-      <SearchBox
-        placeholder="Search monsters"
-        handleChange={(e) => setSearch(e.target.value)}
-      />
+      <div className="text-center pt-4">
+        <h1 className="text-blue-200 text-3xl  font-bold">Monsters Rolodex</h1>
+      </div>
+      <SearchBox placeholder="Search monsters" handleChange={handleChange} />
       <CardList monsters={filteredMonsters} />
     </div>
   );
