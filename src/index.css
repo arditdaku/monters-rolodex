@@ -1,13 +1,21 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .card-list {
+    @apply grid grid-cols-2 lg:grid-cols-5 md:grid-cols-3 sm:gap-3 gap-5 lg:gap-7  my-0 mx-auto md:px-4;
+  }
+
+  .card-container {
+    @apply flex flex-col justify-center  bg-blue-200 rounded-md border-solid border-2 border-blue-100 p-6 cursor-pointer;
+  }
+
+  .card-name {
+    @apply text-center font-bold text-xs md:text-sm lg:text-xl subpixel-antialiased;
+  }
+
+  .card-email {
+    @apply text-xs text-center break-words lg:text-base text-gray-800;
+  }
 }
